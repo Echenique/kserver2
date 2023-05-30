@@ -1,0 +1,27 @@
+<h2 class="title">Hoteis listados</h2>
+
+<section class="content">
+	<section class="filters">
+		<!-- <mat-form-field>
+			<input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="dateFrom" placeholder="De" [(ngModel)]="filterFrom">
+			<mat-datepicker-toggle matSuffix [for]="dateFrom"></mat-datepicker-toggle>
+			<mat-datepicker #dateFrom></mat-datepicker>
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="dateTo" placeholder="at&eacute;" [(ngModel)]="filterTo">
+			<mat-datepicker-toggle matSuffix [for]="dateTo"></mat-datepicker-toggle>
+			<mat-datepicker #dateTo></mat-datepicker>
+		</mat-form-field> -->
+		<mat-form-field class="inputlogFilter">
+			<input autocomplete="off" matInput placeholder="Filtrar Hotel" [(ngModel)]="filter">
+		</mat-form-field>
+		<!-- <button class="btnSave" id="btnSave" mat-raised-button color="primary" (click)="findFiltered()"><i class="material-icons">search</i></button> -->
+	</section>
+</section>
+<section class="content">
+	<section class="testsuite-list">
+        <div *ngFor="let hotel of hoteis | keys:filter">
+            <p></p>
+        </div>
+	</section>
+</section>

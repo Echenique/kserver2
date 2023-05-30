@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-content>
+        <div class="logo">
+            <img src="assets/images/logo_100.png"/>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="text" matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Password" formControlName="password">
+            </mat-form-field>
+            
+            
+            <p *ngIf="error" class="error">
+                {{ error }}
+            </p>
+            
+            <div class="button">
+    			<button type="submit" color="accent" mat-raised-button>Entrar</button>
+            </div>
+            
+        </form>
+    </mat-card-content>
+</mat-card>

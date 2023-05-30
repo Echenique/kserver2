@@ -1,0 +1,38 @@
+<mat-sidenav-container>
+    <mat-toolbar>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sideMenu.open()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <a routerLink="/hoteis">
+            <div class="logoToolbar">
+                <img *ngIf="true" height="30" src="assets/images/logo_75.png"/>
+            </div>
+        </a>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with share icon">
+            <mat-icon>person_icon</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+    
+    <mat-sidenav #sideMenu>
+        <button class="menu-item" mat-button routerLink="/hoteis" (click)="sideMenu.close()">
+            <mat-icon>dashboard</mat-icon> Hoteis
+        </button>
+        
+<!--         
+        
+        <button class="menu-item" mat-button routerLink="/access-log" (click)="sideMenu.close()">
+            <mat-icon >line_style</mat-icon> Logs de acesso
+        </button> -->
+    </mat-sidenav>
+    
+    <section class="page">
+        <router-outlet></router-outlet>
+    </section>
+</mat-sidenav-container>
