@@ -1,6 +1,7 @@
 import { HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SERVER_URL } from './provider';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class HttpService {
 
   login(credentials:any) {
     return new Promise<void>((resolve, reject) => {
-      this.http.post(`/services/user/sigin`, credentials)
+      this.http.post(`${SERVER_URL}/services/user/sigin`, credentials)
       .subscribe((resp) => {
         let user:any = resp
         this.user = user;
@@ -44,11 +45,7 @@ export class HttpService {
   getUser(): Promise<any> {
     return new Promise((resolve, reject) => {
       if(!this.user){
-        this.http.get(`/services/user/check-auth`)
-        .subscribe(user => {
-          this.user = user;
-          resolve(this.user);
-        }, err => reject(err))
+        resolve( this.http.get(`${SERVER_URL}/services/user/check-auth`))
       }else{
         resolve(this.user);
       }

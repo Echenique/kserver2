@@ -3,10 +3,14 @@
     height: 100vh;
     display: block;
     
+    mat-toolbar{
+        background-color: #a1a1a1;
+    }
+
     mat-sidenav-container{
         width: 100%;
         height: 100vh;
-        background-color: #f1cc0e;
+        background-color: #f8d4a4;
         
         mat-sidenav{            
             width: 300px;

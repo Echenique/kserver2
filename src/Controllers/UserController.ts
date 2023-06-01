@@ -41,7 +41,6 @@ export default {
 
     async signin(req: UserRequest, res: Response){
         const { email, password } = req.body;
-
         let user = await UserModel.findOne({
             email, 
             password: createHash('md5').update(password).digest('hex')

@@ -48,7 +48,6 @@ const tasks = {
     }),
     setupHttpServer: () => new Promise<void>((resolve, reject) => {
         global.log.info('Setting up HTTP server...');
-        
         let app = express();
         app
         .use(json())
@@ -64,7 +63,6 @@ const tasks = {
       
         serverHttp.listen(process.env.SERVER_PORT, () => {
             global.log.info('Server HTTP running!');
-            resolve();
         });
     })
 }
